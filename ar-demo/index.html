@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>MindAR demo</title>
+<head>
+  <meta charset="utf-8">
+  <title>MindAR demo</title>
 
-    <!-- ① A‑Frame core (3‑D engine) -->
-    <script src="https://cdn.jsdelivr.net/npm/aframe@1.5.0/dist/aframe.min.js"></script>
+  <!-- A‑Frame 3‑D engine -->
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 
-    <!-- ② MindAR wrapper for A‑Frame (image tracking) -->
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.3/dist/mindar-image-aframe.prod.js"></script>
+  <!-- MindAR image‑tracking extension for A‑Frame -->
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  <!--                ↑ this URL is valid; it’s the one used in the official docs :contentReference[oaicite:0]{index=0} -->
 
-    <style>body{margin:0;overflow:hidden}</style>
-  </head>
+  <style>body{margin:0;overflow:hidden}</style>
+</head>
 
-  <body>
-    <a-scene mindar-image="imageTargetSrc: ./assets/poster.mind;" embedded>
-      <!-- preload the model -->
-      <a-assets>
-        <a-asset-item id="ship" src="./assets/mymodel.glb"></a-asset-item>
-      </a-assets>
+<body>
+  <a-scene mindar-image="imageTargetSrc: ./assets/poster.mind;" embedded>
+    <a-assets>
+      <a-asset-item id="ship" src="./assets/mymodel.glb"></a-asset-item>
+    </a-assets>
 
-      <!-- attach model to first (index 0) image target -->
-      <a-entity mindar-image-target="targetIndex: 0">
-        <a-gltf-model
-          src="#ship"
-          scale="0.2 0.2 0.2"
-          rotation="90 0 0">
-        </a-gltf-model>
-      </a-entity>
+    <!-- anchor the model to the first (index 0) target -->
+    <a-entity mindar-image-target="targetIndex: 0">
+      <a-gltf-model src="#ship"
+                    scale="0.2 0.2 0.2"
+                    rotation="90 0 0"></a-gltf-model>
+    </a-entity>
 
-      <a-camera look-controls></a-camera>
-    </a-scene>
-  </body>
+    <a-camera look-controls></a-camera>
+  </a-scene>
+</body>
 </html>
