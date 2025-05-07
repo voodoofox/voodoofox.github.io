@@ -1,0 +1,12 @@
+<a-scene mindar-image="imageTargetSrc: ./assets/poster.mind;" embedded>
+  <a-assets>
+    <a-asset-item id="ship" src="./assets/mymodel.glb"></a-asset-item>
+  </a-assets>
+
+  <!-- anchor to first (index 0) target -->
+  <a-entity mindar-image-target="targetIndex: 0">
+    <a-gltf-model src="#ship" scale="0.2 0.2 0.2" rotation="90 0 0"></a-gltf-model>
+  </a-entity>
+
+  <a-camera look-controls></a-camera>
+</a-scene>
