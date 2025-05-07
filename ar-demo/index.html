@@ -7,21 +7,27 @@
   <!-- MindAR -->
   <script src="https://cdn.jsdelivr.net/npm/mind-ar/dist/mindar-image-aframe.prod.js"></script>
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    a-scene {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  a-scene {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  /* force the behind-the-scenes WebGL canvas to cover, not letterbox */
+  a-scene canvas {
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+</style>
 </head>
 
 <body>
