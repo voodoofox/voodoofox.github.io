@@ -74,23 +74,22 @@
       -->
     </a-assets>
 
-    <a-entity mindar-image-target="targetIndex: 0">
-      <!-- Test box: sits flush on the poster and peeks out toward camera -->
-      <a-box
-        width="0.2" height="0.2" depth="0.2"
-        color="red"
-        position="0 0.1 -0.05">
-      </a-box>
+<a-entity
+  mindar-image-target="targetIndex: 0"
+  rotation="0 180 0"
+>
+  <!-- lights if you haven’t already -->
+  <a-entity light="type: ambient; intensity: 0.5"></a-entity>
+  <a-entity light="type: directional; intensity: 0.8" position="0 1 0"></a-entity>
 
-      <!-- Replace the box with your model by uncommenting:
-      <a-gltf-model
-        src="#ship"
-        position="0 0 0.1"
-        rotation="0 0 0"
-        scale="0.3 0.3 0.3">
-      </a-gltf-model>
-      -->
-    </a-entity>
+  <!-- box is 0.2m tall, so Y = 0.1m sits it flush on the poster;
+       Z = -0.05m pulls it out of the plane toward the camera -->
+  <a-box
+    width="0.2" height="0.2" depth="0.2"
+    color="red"
+    position="0 0.1 -0.05">
+  </a-box>
+</a-entity>
 
     <a-camera look-controls></a-camera>
   </a-scene>
